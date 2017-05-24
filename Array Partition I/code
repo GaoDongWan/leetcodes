@@ -1,0 +1,58 @@
+/*
+2n个数，俩俩配成n组，求各组较小的数的总和，使其总和最大
+[让相邻的两个数分成一组]
+*/
+import java.util.*;
+public class Solution {
+    public int arrayPairSum(int[] nums) {
+        Arrays.sort(nums);
+        int sum=0;
+        for(int i=0;i<nums.length;i+=2)
+            sum+=nums[i];
+        return sum;
+    }
+}
+
+public class Solution {
+    public int arrayPairSum(int[] nums) {
+        int[] hash = new int[20001];
+        for(int ele : nums){
+            hash[ele+10000] += 1;
+        }
+        int p = 0;
+        int total = 0;
+        for(int i = 0; i < 20001; i++){
+            while(hash[i] != 0){
+                p += 1;
+                if (p % 2 == 1){
+                    total += i - 10000;
+                }
+                hash[i]--;
+            }
+        }
+        return total;
+    }
+}
+
+    public int arrayPairSum(int[] nums) {
+        int sum = 0;
+        boolean odd = true;
+        byte[] store = new byte[20001];
+        
+        
+        for(int num: nums){
+            store[num + 10000] ++;
+        }
+        
+        for(int i = 0; i < store.length; i++){
+            while(store[i] != 0){
+                if(odd){
+                    sum += i - 10000;
+                }
+                odd = !odd;
+                store[i] --;
+            }
+        }
+        return sum;
+        
+    }
