@@ -19,7 +19,7 @@ class Solution:
                 return [dict[a], i]
 
 
-//二.先排序，首位靠近，寻找结果，时间O(n)~O(nlogn)，空间O(n)
+//二.自己写的，先排序，首位靠近，寻找结果，时间O(n)~O(nlogn)，空间O(n)
 //python.sort() 是timsort的实现，在n~nlogn之间，取决于序列有序程度(小数折半插入，大数归并)
 class Solution:
     def twoSum(self, nums, target):
