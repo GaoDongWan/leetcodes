@@ -2,7 +2,7 @@
 nums1:n nums2:m
 题目意思见标题，要求O(log(n+m))
 '''
-一 符合要求的
+//一 符合要求的
 // https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/
 class Solution:
     def findMedianSortedArrays(self, nums1: list, nums2: list):
@@ -43,7 +43,7 @@ class Solution:
 
                 return (max_of_left + min_of_right) / 2.0
 
-二 运行最快的 O(n~nlogn)?
+//二 运行最快的 O(n~nlogn)?
 class Solution(object):
     def findMedianSortedArrays(self, nums1, nums2):
         """
@@ -59,7 +59,7 @@ class Solution(object):
         else:
             return (nums[int(mid)] + nums[int(mid) + 1]) / 2.0
             
-三 自己写的，类似归并过程，只循环到中间次数  O((n+m)/2)
+//三 自己写的，类似归并过程，只循环到中间次数  O((n+m)/2)
 class Solution:
     def findMedianSortedArrays(self, nums1: list, nums2: list):
         i = 0
